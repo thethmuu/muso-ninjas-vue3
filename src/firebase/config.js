@@ -16,7 +16,7 @@ firebase.initializeApp(firebaseConfig)
 
 // init services
 const projectFirebase = firebase.firestore()
-const projectAuth = firestore.auth()
+const projectAuth = firebase.auth()
 
 // timestamp
 const timestamp = firebase.firestore.FieldValue.serverTimestamp
