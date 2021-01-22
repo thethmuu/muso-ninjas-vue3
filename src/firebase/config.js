@@ -4,23 +4,23 @@ import 'firebase/auth'
 import 'firebase/storage'
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDLHzOchY_PEPHmJ7yjHL4wOPtej9WVdZw",
-  authDomain: "muso-ninjas-vue3.firebaseapp.com",
-  projectId: "muso-ninjas-vue3",
-  storageBucket: "muso-ninjas-vue3.appspot.com",
-  messagingSenderId: "1058420018511",
-  appId: "1:1058420018511:web:abd06f29e9b7a03fb0893a"
+  apiKey: "AIzaSyB8IV46iv-2u0m_-l35_mjTwEga5B1PS50",
+  authDomain: "muso-ninjas-music-app.firebaseapp.com",
+  projectId: "muso-ninjas-music-app",
+  storageBucket: "muso-ninjas-music-app.appspot.com",
+  messagingSenderId: "1018508360256",
+  appId: "1:1018508360256:web:60132db40836f174853da5"
 };
 
 // init firebase
 firebase.initializeApp(firebaseConfig)
 
 // init services
-const projectFirebase = firebase.firestore()
+const projectFirestore = firebase.firestore()
 const projectAuth = firebase.auth()
 const projectStorage = firebase.storage()
 
 // timestamp
 const timestamp = firebase.firestore.FieldValue.serverTimestamp
 
-export { projectFirebase, projectAuth, projectStorage, timestamp }
+export { projectFirestore, projectAuth, projectStorage, timestamp }
