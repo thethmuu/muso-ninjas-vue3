@@ -3,7 +3,7 @@ import { projectFirestore } from '../firebase/config'
 
 const getDocument = (collection, id) => {
 
-  const documents = ref(null)
+  const document = ref(null)
   const error = ref(null)
 
   // register the firestore collection reference
@@ -27,7 +27,7 @@ const getDocument = (collection, id) => {
     onInvalidate(() => unsub());
   });
 
-  return { error, documents }
+  return { error, document }
 }
 
 export default getDocument
