@@ -21,10 +21,12 @@
 </template>
 
 <script>
+import useStorage from '@/composables/useStorage'
 import getDocument from '@/composables/getDocument'
 import useDocument from '@/composables/useDocument'
 import getUser from '@/composables/getUser'
 import { computed } from 'vue'
+import {useRouter} from 'vue-router'
 
 export default {
   props: ['id'],
@@ -32,13 +34,17 @@ export default {
     const {error, document:playlist} = getDocument('playlists', props.id)
     const {user} = getUser()
     const {deleteDoc} = useDocument('playlists', props.id)
+    const {deleteImage} = useStorage()
+    const router = useRouter()
 
     const ownership = computed(() => {
       return playlist.value && user.value && (user.value.uid == playlist.value.userId)
     })
 
     const handleDelete = async () => {
+      await deleteImage(playlist.value.filePath)
       await deleteDoc()
+      router.push({name: 'Home'})
     }
 
     return {error, playlist, ownership, handleDelete}
