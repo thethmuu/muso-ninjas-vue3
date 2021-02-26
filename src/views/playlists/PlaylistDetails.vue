@@ -66,6 +66,8 @@ export default {
   border-radius: 20px;
   position: relative;
   padding: 160px;
+  border: 2px solid white;
+  box-shadow: 1px 2px 3px rgba(50, 50, 50, 0.2);
 }
 .cover img {
   display: block;
