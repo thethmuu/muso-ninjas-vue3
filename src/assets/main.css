@@ -37,6 +37,10 @@ button:hover, .btn:hover {
   background: var(--primary);
   color: white;
 }
+button:active, .btn:active {
+  transform: scale(1.05);
+  transition: all 0.3s;
+}
 button:disabled {
   opacity: 0.5;
   color: var(--primary);

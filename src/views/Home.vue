@@ -4,6 +4,7 @@
     <div v-if="documents">
       <ListView :playlists="documents" />
     </div>
+    <div v-else>loading...</div>
   </div>
 </template>
 
